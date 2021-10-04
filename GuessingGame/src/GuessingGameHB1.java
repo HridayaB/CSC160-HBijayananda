@@ -1,16 +1,14 @@
 /*
  * Hridaya Bijayananda
- * GuessingGame 1
+ * GuessingGameHB1
  * Due: 09/30/21
- * Revision: 10/01/21
  * Description: User guessing 
  * computer generated number between 10 to 20
  */
 import java.util.Scanner;
 import java.util.Random;
 
-
-public class GuessingGame {
+public class GuessingGameHB1 {
 	static Scanner input;
 	public static void main(String[] args) {
 		input = new Scanner(System.in);
@@ -26,11 +24,9 @@ public class GuessingGame {
 		System.out.println("The random number is " + answer);
 		
 		System.out.println("the guess is " + guess);
+	}
+}
 /*
  * Problems: I kept forgetting where to put 
  * spaces and where not to
- */
-	
-	}
-
-}
+ */	
