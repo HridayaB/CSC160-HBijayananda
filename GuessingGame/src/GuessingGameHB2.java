@@ -1,20 +1,21 @@
 /*
  * Hridaya Bijayananda
- * GuessingGameHB1
- * Due: 09/30/21
- * Description: User guessing 
- * computer generated number between 10 to 20
+ * GuessingGameHB2
+ * Due: 10/04/21
+ * Description: User gets notified 
+ * if the number they guessed was too high or too low
  */
 import java.util.Scanner;
 import java.util.Random;
 
-public class GuessingGameHB1 {
+public class GuessingGameHB2 {
 	static Scanner input;
 	public static void main(String[] args) {
 		input = new Scanner(System.in);
 		int guess;	//User's guess
 		Random randGen; //Random number generator
 		
+		System.out.println("The random number is ");
 		System.out.println("What is your guess?");
 		guess = input.nextInt();
 		
@@ -22,11 +23,17 @@ public class GuessingGameHB1 {
 		int answer;	// Guessed random number
 		answer = randGen.nextInt(20-10+1) + 10;
 		System.out.println("The random number is " + answer);
-		
+		if (guess>answer) {
+			System.out.println("Your guess is too high");
+		}
+		else {
+			if (guess<answer) {
+				System.out.println("Your guess is too low");
+			}
+		}
 		System.out.println("the guess is " + guess);
 	}
 }
 /*
- * Problems: I kept forgetting where to put 
- * spaces and where not to
+ * Problems: No problems
  */	
