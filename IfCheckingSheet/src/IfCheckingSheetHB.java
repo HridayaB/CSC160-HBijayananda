@@ -2,8 +2,7 @@
  * Hridaya Bijayananda
  * IfCheckingSheetHB
  * Due: 10/05/21
- * Description: Learning to use if statements
- * in coding
+ * Description: Learning to use if statements in coding
  */
 import java.util.Scanner;
 

@@ -15,21 +15,19 @@ public class GuessingGameHB2 {
 		int guess;	//User's guess
 		Random randGen; //Random number generator
 		
-		System.out.println("The random number is ");
-		System.out.println("What is your guess?");
-		guess = input.nextInt();
-		
 		randGen = new Random();
 		int answer;	// Guessed random number
 		answer = randGen.nextInt(20-10+1) + 10;
 		System.out.println("The random number is " + answer);
-		if (guess>answer) {
+		System.out.println("What is your guess?");
+		guess = input.nextInt();
+		
+		if (guess > answer) 
+		{
 			System.out.println("Your guess is too high");
 		}
-		else {
-			if (guess<answer) {
-				System.out.println("Your guess is too low");
-			}
+		else {	
+			System.out.println("Your guess is too low");
 		}
 		System.out.println("the guess is " + guess);
 	}
