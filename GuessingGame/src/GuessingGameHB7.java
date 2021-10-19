@@ -83,10 +83,10 @@ public class GuessingGameHB7 {
 				user = quit;
 			}
 		} while (user == play);
-		averagePerGame = totalPoints / (float)numGamesPlayed;
+		averagePerGame = totalPoints / numGamesPlayed;
 		System.out.println("The total amount of points you earned is " + totalPoints);
 		System.out.println("The number of games you played is " + numGamesPlayed);
-		System.out.println("Your average for the games you played is " + averagePerGame);	
+		System.out.println("" + averagePerGame + numGamesPlayed);	
 		input.close();
 	}
 }
