@@ -10,33 +10,30 @@ public class MancalaHB1
 
 	public static void main(String[] args) 
 	{
-	
+
 		int numStars; // number of stars
 		numStars = 3;
 		makeSolidLine(numStars);
 		System.out.println();
 		makeSolidLine(10);
-		
+
 	} // end of main
-	
+
 	/*
-	 * Description: Print out a line of stars
-	 * numStars - number of stars
-	 * return type void
+	 * Description: Print out a line of stars numStars - number of stars return type
+	 * void
 	 */
-	public static void makeSolidLine(int numStars)
-	{
+	public static void makeSolidLine(int numStars) {
 		int starCount; // LCV - Loop control variable
 		starCount = 0;
-		
-		while (starCount < numStars)
-		{
+
+		while (starCount < numStars) {
 			System.out.print("*");
 			starCount++;
 		} // end of while loop
-		
+
 	} // end of makeSolidLine
 } // end of class
 /*
  * Problems: none
-*/
+ */
