@@ -8,95 +8,91 @@
  * There will be a mancala board with all the stars aligned.
  * 
  */
-public class MancalaHB3 
+public class MancalaHB3
 {
 
-	public static void main(String[] args) 
+	public static void main( String[ ] args )
 	{
 
 		int numStars; // number of stars
 		numStars = 3;
-		makeSolidLine(numStars);
-		System.out.println();
-		makeSolidLine(10);
-		System.out.println();
-		makeDottedLine();
+		makeSolidLine ( numStars );
+		System.out.println ( );
+		showBoard();
+		
 
 	} // end of main
 
-/*
-* Description: Print out a line of stars 
-*numStars - number of stars 
-* return type void
-*/
-	public static void makeSolidLine(int numStars) 
+	/*
+	 * Description: Print out a line of stars numStars - number of stars return type void
+	 */
+	public static void makeSolidLine( int numStars )
 	{
 		int starCount; // LCV - Loop control variable
 		starCount = 0;
 
-		while (starCount < numStars) 
+		while ( starCount < numStars )
 		{
-			System.out.print("*");
+			System.out.print ( "*" );
 			starCount++;
 		} // end of while loop
 
 	} // end of makeSolidLine
-	
-/*
- * Description: Print out sets of stars with 6 spaces in between
- * return type void
- */
-	public static void makeDottedLine()
+
+	/*
+	 * Description: Print out sets of stars with 6 spaces in between return type void
+	 */
+	public static void makeDottedLine( )
 	{
 		int numSpaces; // LCV
 		int numSets; // LCV
 		numSets = 0;
-		
-		while (numSets < 8) 
+
+		while ( numSets < 8 )
 		{
 			numSpaces = 0;
-			System.out.print("*");
+			System.out.print ( "*" );
 			numSets++;
-			while (numSpaces < 6)
+			while ( numSpaces < 6 )
 			{
-				System.out.print(" ");
+				System.out.print ( " " );
 				numSpaces++;
 			} // end of while loop
 		} // end of while loop
-		System.out.println();
+		System.out.println ("*");
 	} // end of makeDottedLine
 
-/*
- * Description: The board is put in as an output
- * return type void
-*/
-	public static void showBoard()
+	/*
+	 * Description: The board is put in as an output return type void
+	 */
+	public static void showBoard( )
 	{
-		makeSolidLine(5);
-		System.out.println();
-		makeDottedLine();
+		int numStars; // number of stars
+		numStars = 3;
+		makeSolidLine ( numStars );
+		System.out.println ( );
+		makeSolidLine ( 57 );
+		System.out.println ( );
+		makeDottedLine ( );
 	} // end of showBoard
 
-/*	
- * Description: The top row of numbers that will go on the board
- * return type void 
-*/
-	public static void showTopRowNumbers()
+	/*
+	 * Description: The top row of numbers that will go on the board return type void
+	 */
+	public static void showTopRowNumbers( )
 	{
 		int topNum;
 	} // end of showTopRowNumbers
-	
-/*
- * Description: The bottom row of numbers that will go on the board
- * return type void	
-*/
-	public static void showBottomRowNumbers()
+
+	/*
+	 * Description: The bottom row of numbers that will go on the board return type void
+	 */
+	public static void showBottomRowNumbers( )
 	{
 		int bottomNum;
 	} // end of showBottomRowNumbers
-	
+
 } // end of class
 /*
- * Problems: At first, I had trouble figuring out how to organize everything and deciding where
- * everything needed to go  
+ * Problems: At first, I had trouble figuring out how to organize everything and deciding where everything needed to go
  */
