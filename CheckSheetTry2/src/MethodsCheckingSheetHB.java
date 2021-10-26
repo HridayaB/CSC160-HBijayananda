@@ -1,3 +1,9 @@
+/*
+ * Hridaya Bijayananda
+ * Due: 10/25/21
+ * Description: Learning and practicing using methods and printf
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,21 +15,23 @@ public class MethodsCheckingSheetHB
 	{
 		input = new Scanner(System.in);
 		randGen = new Random ( );
-		int quantity; //
+		int quantity; // the total amount of numbers in the table
 		quantity = getQuantity();
 		makeRandomTable (quantity);
 		
 	} // end of main
 
+/*
+ * Description: a table is created with random numbers, a new line is made every 7 numbers
+ * Parameter: int quantity  
+ * return type void
+ */
 	public static void makeRandomTable ( int quantity)
 	{
 		
 		int num; // LCV
 		num = 0;
-		int high; // range for random number
-		int low; // range for random number
-		high = 1003;
-		low = 9;
+		getRange();
 		int answer;	// Guessed random number
 		System.out.printf ( "%36s %n", "random table" );
 
@@ -39,9 +47,14 @@ public class MethodsCheckingSheetHB
 		} // end of while loop
 	} // end of makeRandomTable
 	
+/*
+ * Description: getting the quantity for the table
+ * Parameter: none
+ * return type int
+ */
 	public static int getQuantity()
 	{ 
-		int quantity;
+		int quantity; //// the total amount of numbers in the table
 		System.out.println ( "Enter how many numbers you want" );
 		quantity = input.nextInt ( );
 		while ( quantity < 10 || quantity > 500)
@@ -51,4 +64,29 @@ public class MethodsCheckingSheetHB
 		} // end of while loop
 		return(quantity);
 	}
+	
+/*
+ * Description: getting the range for the random numbers on the table
+ * Parameter: none
+ * return type int
+ */
+	public static int getRange()
+	{
+		int high; // range for random number
+		int low; // range for random number
+		System.out.println("Enter the highest number");
+		high = input.nextInt();
+		System.out.println("Enter the lowest number");
+		low = input.nextInt();
+		if (low > high)
+		{
+			System.out.println("Low cannot be a bigger number than high, try again.");
+			low = input.nextInt ( );
+		} // end of if statement
+		return (high +low);
+	} // end of getRange
 } // end of class
+
+/*
+ * Problems: I had trouble with the table at the beginning.
+ */

@@ -1,12 +1,12 @@
 /*
  * Hridaya Bijayananda
- * Due: 10/22/21
+ * Due: 10/25/21
  * Description: Mancala game. A game played by two people moving beads
  * around a board. The person with the most beads wins.
  * There will be a mancala board with all the stars aligned.
  * 
  */
-public class MancalaHB3
+public class MancalaHB4
 {
 	public static void main( String[ ] args )
 	{
@@ -15,8 +15,9 @@ public class MancalaHB3
 		numStars = 57;
 		makeSolidLine ( numStars );
 		showBoard();
-		
-
+		int[] beadArray;
+		beadArray = new int[4];
+		startingArray ( int beadArray);
 	} // end of main
 
 	/*
@@ -125,7 +126,14 @@ public class MancalaHB3
 		} // end of while
 		System.out.printf ( "*      *" );
 	} // end of showBottomRowNumbers
-
+	
+	/*
+	 * 
+	 */
+	public static int startingArray ( int beadArray )
+	{
+		return (0);
+	} // end of startingArray
 } // end of class
 /*
  * Problems: At first, I had trouble figuring out how to organize everything and deciding where everything needed to go.
