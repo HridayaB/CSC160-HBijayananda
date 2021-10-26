@@ -6,7 +6,7 @@
  * There will be an array that will have the values of 4 and 0.
  * 
  */
-public class MancalaHB4
+public class MancalaHB5
 {
 	static final int NUMBINS = 14;
 	public static void main( String[ ] args )
@@ -183,8 +183,23 @@ public class MancalaHB4
 		beadArray[11] = 12;
 		beadArray[12] = 13;
 		beadArray[13] = 10;
-		
 	} // end of startingArrayTest
+	
+	/*
+	 * 
+	 */
+	public static void showTopBins(int [ ] beadArray)
+	{
+		
+	} // end of showTopBins
+	
+	/*
+	 * 
+	 */
+	public static void showBottomBins( int [ ] beadArray)
+	{
+		
+	}
 } // end of class
 /*
  * Problems: none
