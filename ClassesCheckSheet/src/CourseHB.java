@@ -1,4 +1,5 @@
 
+
 public class CourseHB
 {
 	private String courseNumber;
@@ -8,7 +9,9 @@ public class CourseHB
 	private int credits;
 	
 	/*
-	 * 
+	 * Description: Manual default constructor for CourseHB
+	 * Parameter: none
+	 * return type CourseHB
 	 */
 	public CourseHB ()
 	{
@@ -19,6 +22,11 @@ public class CourseHB
 		credits = 0;
 	} // end of Course
 
+	/*
+	 * Description: Generated default constructor for CourseHB
+	 * Parameter: none
+	 * return type CourseHB
+	 */
 	public CourseHB( String courseNumber, int numStudents, int maxStudents, int room, int credits )
 	{
 		super ( );
@@ -78,5 +86,15 @@ public class CourseHB
 	{
 		this.credits = credits;
 	}
-	
+
+	/*
+	 * Description: Printing the data members values from CourseHB
+	 * Parameter: none
+	 * return type String
+	 */
+	public String toString( )
+	{
+		return "CourseHB" + "\n" + "[" + "\n" + "courseNumber=" + courseNumber + "\n" + "numStudents=" + numStudents + "\n" + "maxStudents=" + maxStudents
+				+ "\n" + "room=" + room + "\n" + "credits=" + credits + "\n" + "]";
+	}
 } // end of Course
