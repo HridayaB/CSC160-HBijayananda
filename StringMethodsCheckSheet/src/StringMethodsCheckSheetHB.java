@@ -43,11 +43,10 @@ public class StringMethodsCheckSheetHB
 		{
 			System.out.println("word1 is less than word2");
 		} // end of else
-		int Integer.parseInt (word1);
-	}
-	public static void parseInt( String word1 )
-	{
-		int Integer.parseInt (word1);
-	}
+		int convertedWord1 = Integer.parseInt ( word1 ) + 1;
+		System.out.println (convertedWord1);
+		String word = "hello";
+		int convertedWord = Integer.parseInt ( word );
+		System.out.println (convertedWord);
 	} // end of main
 } // end of StringMethodsCheckSheetHB

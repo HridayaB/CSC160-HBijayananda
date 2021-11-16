@@ -1,16 +1,17 @@
 /*
  * Hridaya Bijayananda
- * Due: 11/02/21
+ * Due: 11/08/21
  * Description: Mancala game. A game played by two people moving beads
  * around a board. The person with the most beads wins.
- * The player gets to drop bead in the bins.
+ * The player gets the option to play with a computer.
  * 
  */
 import java.util.Scanner;
+import java.util.Random;
 
-public class MancalaHB9
+public class MancalaHB10
 {
-	static final int NUMBINS = 14; // the number of bins
+	private static final String [] RANK = NUMBINS; // the number of bins
 	static Scanner input;
 	public static void main( String[ ] args )
 	{
@@ -20,17 +21,16 @@ public class MancalaHB9
 		// int bin; // the current bin
 		int[ ] beadArray; // the array for the beads in the board
 		beadArray = new int[ NUMBINS ];
+		char vsComputer; // playing against the computer
 		char game = 'y';
+		startingTestArray ( beadArray );
+		showBoard (beadArray);
+		System.out.println ("Would you like to play against a computer?");
+		vsComputer = input.next().toLowerCase().charAt ( 0 );
 		player = 1; // Player 1 is the default player
 		while (game == 'y')
 		{
 			// startingArray(beadArray);
-			startingTestArray ( beadArray );
-			// printArray(beadArray);
-			// showBoard ( beadArray );
-			// gameOverCheck ( beadArray );
-			//bin = getStartingBin ( beadArray, player );
-			//System.out.println("The player chose the bin " + bin);
 			do // while (winner == -1);
 			{
 				dropBeads (beadArray, player);
@@ -51,8 +51,28 @@ public class MancalaHB9
 				System.out.println("Player 2 wins the game!");
 			} // end of else 
 			else {;}
+			if (vsComputer == 'y')
+			{
+				dropBeads (beadArray, player);
+				computerChoice (beadArray);
+				dropBeads (beadArray, player);
+				winner = gameOverCheck (beadArray);
+				if (winner == 1)
+				{
+					System.out.println("Player 1 wins the game!");
+				} // end of if statement
+				else {;}
+				game = 'n';
+				System.out.println ( "Do you want to play another game against the computer?" );
+				vsComputer = input.next().toLowerCase().charAt(0);
+			} // end of if statement
 			System.out.println ( "Do you want to play another game?" );
 			game = input.next().toLowerCase().charAt(0);
+			if (game == 'y')
+			{
+				System.out.println ("Would you like to play against a computer?");
+				vsComputer = input.next().toLowerCase().charAt ( 0 );
+			} // end of if statement	
 		} // end of while loop
 		showBoard (beadArray);
 		System.out.println("Thank you for playing!");
@@ -272,11 +292,11 @@ public class MancalaHB9
 		for ( index = 0; index < 6; index++ )
 		{
 			p1Points = p1Points + beadArray[ index ];
-		} // end of for loop
+		}
 		for ( index = 12; index > 6; index-- )
 		{
 			p2Points = p2Points + beadArray[ index ];
-		} // end of for loop
+		}
 		if ( p1Points == 0 || p2Points == 0 )
 		{
 			// System.out.println ( "The game has ended!" );
@@ -402,7 +422,68 @@ public class MancalaHB9
 		} while (bin == playerEndBin && winner == -1);
 		return winner;
 	} // end of dropBeads
-} // end of class
+	
+	/*
+	 * Description: The opponent is the computer.
+	 * Parameter: int [] beadArray - the array for the beads in the board
+	 * return type
+	 */
+	public static void computerChoice (int [] beadArray)
+	{
+		Random randGen;
+		randGen = new Random ( );
+		int winner;
+		winner = -1;
+		// int player;
+		int highBin = 12;
+		int lowBin = 7;
+		int hand;
+		int bin;
+		int playerEndBin;
+		int opponentEndBin;
+		playerEndBin = 13;
+		opponentEndBin = 6;
+		do // while (bin == playerEndBin && winner == -1);
+		{
+			System.out.println ( "Computer's turn." );
+			bin = randGen.nextInt ( 12 - 7 ) + 7;
+			while (bin > highBin || bin < lowBin || beadArray [bin] < 1)
+			{
+				// System.out.println("Error. Choose again.");
+				bin = randGen.nextInt ( 12 - 7 ) + 7;
+			} // end of while loop
+			System.out.println ( "The computer chose " + bin);
+			do // while (beadArray [bin] > 1);
+			{
+				hand = beadArray [bin];
+				beadArray [bin] = 0;
+				while (hand > 0)
+				{
+					bin++;
+					if (bin == opponentEndBin)
+					{
+						bin++;
+					} // end of if statement
+					if (bin > 13)
+					{
+						bin = 0;
+					} // end of if statement
+					beadArray [bin]++;
+					hand--;
+				} // end of while loop
+			} while (beadArray [bin] > 1 && bin != playerEndBin);
+			if ( beadArray[ 13 ] > beadArray[ 6 ] )
+			{
+				winner = 2;
+			} // end of if statement
+			// player = (player % 2) + 1;
+		} while (bin == playerEndBin && winner == -1);
+		if (winner == 2)
+		{
+			System.out.println("Computer wins the game!");	
+		} // end of if statement
+	} // end of computerChoice
+} // end of MancalaHB10
 /*
  * Problems: I had trouble trying to figure out if I got it right or wrong.
  */

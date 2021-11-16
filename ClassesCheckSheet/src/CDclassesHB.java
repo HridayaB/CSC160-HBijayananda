@@ -11,15 +11,16 @@ public class CDclassesHB
 		CourseHB myCourse;
 		myCourse = new CourseHB ( );
 		String result;
+		String result2;
 		input = new Scanner(System.in);
 		getDataMenbersValues ( myCourse );
 		printDataMembersValues ( myCourse);
 		result = myCourse.toString ( );
 		System.out.println(result);
 		CourseHB myCourse2;
-		myCourse2 = new CourseHB ( String courseNumber, int numStudents, int maxStudents, int room, int credits );
-		
-		System.out.println(myCourse2);
+		myCourse2 = new CourseHB ( "CSC19203", 8, 9, 14, 4 );
+		result2 = myCourse2.toString ( );
+		System.out.println(result2);
 	} // end of main
 	
 	/*
