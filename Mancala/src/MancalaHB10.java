@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class MancalaHB10
 {
-	private static final String [] RANK = NUMBINS; // the number of bins
+	private static final int NUMBINS = 14; // the number of bins
 	static Scanner input;
 	public static void main( String[ ] args )
 	{
@@ -403,18 +403,8 @@ public class MancalaHB10
 					{
 						bin = 0;
 					} // end of if statement
-					/* if (bin == playerEndBin && beadArray [bin] > 1 )
-					{
-						beadArray [bin]++;
-						System.out.println ("Pick a bin from your side.");
-						bin = input.nextInt ();
-					} // end of if statement
-					*/
 					beadArray [bin]++;
 					hand--;
-					// printArray (beadArray);
-					// System.out.print ( beadArray[bin] + " ");
-					// System.out.println ( hand );
 				} // end of while loop
 			} while (beadArray [bin] > 1 && bin != playerEndBin);
 			winner = gameOverCheck (beadArray);
