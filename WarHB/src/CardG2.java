@@ -1,95 +1,90 @@
 /*
- * Coder: Hridaya Bijayananda, Satsuki Higginbotham
- * Due: 11/17/21
+ * coder:Satsuki Higginbotham, Hridaya Bijayananda
+ * Due: 11/30/21
  * Description: This class will have the playing cards with members for rank and suit
  */
-public class Card4G2
-{
-	public final String [ ] RANKS = {null, "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-	public final String [ ] SUITS = {"Clubs", "Diamonds", "Hearts", "Spades"};
-	private int suit; // the four French categories in a card deck
-	private int rank; // the rank of the card
+public class CardG2 
+{	
+	//Array holing rank values
+	public final String[] RANKS = {null,"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 	
-	/* 
-	 * Coder: Satsuki Higginbotham, Hridaya Bijayananda
-	 * Description: comparing two cards by rank
-	 * Parameters:
-	 * Card3G2 card2 - the second card
-	 */
-	public int compareTo(Card4G2 card2)
-	{
-		int returnValue = 0; // the value that gets returned after the cards are compared to one another
-		int cardA = this.getRank( ); // the rank of the first card
-		int cardB = card2.getRank ( ); // the rank of the second card
-		if (cardA == cardB)
-		{
-			returnValue = 0; // the two cards are equal to each other
-			System.out.println ( "The cards are equal." );
-		} // end of if statement
-		else if(cardA > cardB )
-		{
-			returnValue = 1; // the first card is higher
-			System.out.println ( "The first card is higher." );
-		} // end of else
-		else if (cardA < cardB)
-		{
-			returnValue = -1; // the second card is higher
-			System.out.println ( "The second card is higher." );
-		} // end of else
-		return returnValue;
-	}
+	//Array holding suit values
+	public final String[] SUITS= {"clubs","diamonds","hearts","spades"};
 	
-	// constructors below
-	public Card4G2 ( )
+	private int rank; // the card's rank
+	private int suit; // the card's suit
+
+	
+	//Default Constructor
+	public CardG2()
 	{
-		suit = 0;
 		rank = 0;
-	} // end of Card
+		suit = 0;
+	}
 	
-	public Card4G2( int suit, int rank )
-	{
-		super ( );
-		this.suit = suit;
+	//Constructor that takes rank and suit as an argument
+	public CardG2(int rank, int suit) {
+		super();
 		this.rank = rank;
-	} // end of Card
-	// end of constructors
-	
-	// getters and setters below
-	public String [ ] getRanks ( )
-	{
-		return RANKS;
-	}
-	
-	public String [ ] getSuits ( )
-	{
-		return SUITS;
-	}
-	
-	public int getSuit( )
-	{
-		return suit;
-	}
-	
-	public void setSuit( int suit )
-	{
 		this.suit = suit;
 	}
-	
-	public int getRank( )
+
+	/* Satsuki Higginbotham, Hridaya Bijayananda
+	* Description: comparing two cards by rank
+	* Parameters: Card card2 - the card we are comparing the first card to.
+	* return: int value- the higher ranked card
+	*/
+	public int compareTo(CardG2 card)
 	{
-		return rank;
+		int value= 0; // The value of the compared cards
+		int cardA = this.getRank(); // the first card
+		int cardB= this.getRank(); // the second card
+		if(cardA == cardB)
+		{
+			value = 0;
+			//System.out.println("the cards are equal");
+		}
+		else if(cardA > cardB)
+		{
+			value = 1;
+			//System.out.println("the first card is higher");
+		}
+		else if(cardA < cardB)
+		{
+			value = -1;
+			//System.out.println("the second card is higher");
+		}
+		return value;
 	}
 	
-	public void setRank( int rank )
-	{
-		this.rank = rank;
-	}
-	
+	//Start of getters and setters
+		public String[] getRanks() {
+			return RANKS;
+		}
+
+		public String[] getSuits() {
+			return SUITS;
+		}
+
+		public int getRank() {
+			return rank;
+		}
+
+		public void setRank(int rank) {
+			this.rank = rank;
+		}
+
+		public int getSuit() {
+			return suit;
+		}
+
+		public void setSuit(int suit) {
+			this.suit = suit;
+		}
+		
+	//coder:Satsuki Higginbotham
 	@Override
-	// coder: Satsuki Higginbotham
-	public String toString() 
-	{
+	public String toString() {
 		return RANKS[rank] + " of " + SUITS[suit];
-	} // end of toString
-	
-} // end of Class Card
+	}	
+} // end of class CardG2
